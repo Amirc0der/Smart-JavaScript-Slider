@@ -8,6 +8,6 @@ But now with this slider you just need to add your images with ``` <img> ``` HTM
 This is developed by myself from scratch. I wrote it grand-up to use it for all of my future projects.  <br>
 You can use it too, for free! <br>
 
-*** Replace js.js file with the other one in case you don't need the caption generator *** 
+*** Replace arx_slider.js file with the other one in case you don't need the caption generator *** 
 
 ![Slider's preview](thumb.jpg)
