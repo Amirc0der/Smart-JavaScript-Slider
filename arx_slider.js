@@ -10,23 +10,18 @@ const imgHolder = slider.querySelector(".imgholder")
 let currentSlider = 0;
 let dotsnum = sliderCount + 1;
 // CreateDots function creates clickable dots & caption based on the number of images and alt texts
-function CreateDots () {
-	if ( dotsnum != 0 ) {
-		const realId = sliderCount-(dotsnum-1)
-		const newDot = document.createElement("div");
-		const newCaption = document.createElement("div");
-		newDot.classList.add("slider_dots");
-		newDot.setAttribute("id", realId);
-		newDot.setAttribute("onclick", ("sliderJump" + "(" + realId + ")") )
-		newCaption.classList.add("slider_alts");
-		newCaption.innerHTML = sliderImg[realId].alt;
-		slider_dots_holder.appendChild(newDot);
-		imgHolder.appendChild(newCaption);
-		dotsnum--;
-		CreateDots()
-	}
+for ( ;dotsnum != 0;dotsnum--) {
+	const realId = sliderCount-(dotsnum-1)
+	const newDot = document.createElement("div");
+	const newCaption = document.createElement("div");
+	newDot.classList.add("slider_dots");
+	newDot.setAttribute("id", realId);
+	newDot.setAttribute("onclick", ("sliderJump" + "(" + realId + ")") )
+	newCaption.classList.add("slider_alts");
+	newCaption.innerHTML = sliderImg[realId].alt;
+	slider_dots_holder.appendChild(newDot);
+	imgHolder.appendChild(newCaption);
 }
-CreateDots()
 // Below codes are for Next and previous butttons 
 const sliderdots =  slider.querySelectorAll(".slider_dots")
 const slideralts =  slider.querySelectorAll(".slider_alts")
