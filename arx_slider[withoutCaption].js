@@ -10,19 +10,14 @@ const imgHolder = slider.querySelector(".imgholder")
 let currentSlider = 0;
 let dotsnum = sliderCount + 1;
 // CreateDots function creates clickable dots based on the number of images
-function CreateDots () {
-	if ( dotsnum != 0 ) {
-		const realId = sliderCount-(dotsnum-1)
-		const newDot = document.createElement("div");
-		newDot.classList.add("slider_dots");
-		newDot.setAttribute("id", realId);
-		newDot.setAttribute("onclick", ("sliderJump" + "(" + realId + ")") )
-		slider_dots_holder.appendChild(newDot);
-		dotsnum--;
-		CreateDots()
-	}
+for ( ;dotsnum != 0;dotsnum--) {
+	const realId = sliderCount-(dotsnum-1)
+	const newDot = document.createElement("div");
+	newDot.classList.add("slider_dots");
+	newDot.setAttribute("id", realId);
+	newDot.setAttribute("onclick", ("sliderJump" + "(" + realId + ")") )
+	slider_dots_holder.appendChild(newDot);
 }
-CreateDots()
 // Below codes are for Next and previous butttons 
 const sliderdots =  slider.querySelectorAll(".slider_dots")
 
